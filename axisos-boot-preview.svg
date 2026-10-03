@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1232 692" role="img" aria-labelledby="title description">
+  <title id="title">AxisOS 2.0 boot screen</title>
+  <desc id="description">A black startup screen with the Axis triangle logo, Debian Bookworm and Wayland labels, and a loading bar.</desc>
+  <defs>
+    <radialGradient id="screenGlow">
+      <stop offset="0" stop-color="#101d34" />
+      <stop offset="1" stop-color="#000000" />
+    </radialGradient>
+    <linearGradient id="axisBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#158cff" />
+      <stop offset="1" stop-color="#664be7" />
+    </linearGradient>
+    <filter id="logoGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="17" />
+    </filter>
+  </defs>
+  <rect width="1232" height="692" fill="#000000" />
+  <ellipse cx="616" cy="327" rx="186" ry="180" fill="url(#screenGlow)" />
+  <path d="M616 293 590 342h52z" fill="none" stroke="#287cff" stroke-width="25" stroke-linejoin="round" opacity=".48" filter="url(#logoGlow)" />
+  <path d="M616 293 590 342h52z" fill="none" stroke="url(#axisBlue)" stroke-width="7" stroke-linejoin="round" />
+  <path d="M616 309 601 338h30z" fill="none" stroke="#4777ff" stroke-width="5" stroke-linejoin="round" opacity=".9" />
+  <circle cx="616" cy="325" r="4.5" fill="#ffffff" />
+  <text x="616" y="386" fill="#e9e9ee" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" text-anchor="middle">AxisOS 2.0</text>
+  <text x="616" y="411" fill="#55565f" font-family="monospace" font-size="9" font-weight="700" letter-spacing="1.5" text-anchor="middle">DEBIAN BOOKWORM  •  WAYLAND</text>
+  <rect x="516" y="447" width="200" height="4" rx="2" fill="#28292d" />
+</svg>

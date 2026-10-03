@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f8fc" />
+    <meta name="description" content="Explore open-source projects from Axis Technologies, starting with AxisOS." />
+    <title>Projects — Axis Technologies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <header class="wrap header site-header">
+      <a class="brand" href="index.html" aria-label="Axis Technologies home"><span class="brand-mark" aria-hidden="true">▲</span><span><span class="brand-name">Axis Technologies</span><span class="brand-sub">AN OPEN TECHNOLOGY COMPANY</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">+</button>
+      <nav class="nav site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="projects.html" aria-current="page">Projects</a><a href="people.html">People</a><a href="approach.html">Approach</a><a href="about.html">About</a><a class="nav-cta" href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">Explore on GitHub ↗</a></nav>
+    </header>
+    <main class="wrap inner-page">
+      <section class="page-hero">
+        <p class="page-kicker">PROJECT FILE / 001</p>
+        <h1 class="page-title">Axis<span class="accent">OS</span></h1>
+        <p class="page-summary">A Debian-based Linux operating system bringing together the Linux kernel, Cage Wayland compositor, and a custom desktop shell.</p>
+        <div class="action-row"><a class="action-link" href="https://github.com/jackyphuti/AxisOS/releases" target="_blank" rel="noreferrer">Get the latest release ↗</a><a class="action-link" href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">Browse the source ↗</a><a class="action-link" href="https://github.com/jackyphuti/AxisOS/blob/main/INSTALLATION_GUIDE.md" target="_blank" rel="noreferrer">Installation guide ↗</a></div>
+      </section>
+      <section class="content-section">
+        <p class="section-label">SYSTEM PROFILE</p>
+        <div class="data-grid"><div class="data-cell"><span>BASE SYSTEM</span><strong>Debian Linux</strong></div><div class="data-cell"><span>DISPLAY</span><strong>Cage / Wayland</strong></div><div class="data-cell"><span>ARCHITECTURE</span><strong>x86_64</strong></div><div class="data-cell"><span>LICENSE</span><strong>GPL-3.0</strong></div></div>
+      </section>
+      <section class="content-section os-preview" aria-labelledby="preview-title">
+        <p class="section-label">AXISOS / VISUAL PREVIEW</p>
+        <h2 class="preview-heading" id="preview-title">A look inside the system.</h2>
+        <div class="os-preview-grid">
+          <figure class="preview-figure preview-boot">
+            <img src="axisos-boot-preview.svg" alt="AxisOS 2.0 boot screen with the Axis triangle logo on black" loading="lazy" />
+            <figcaption><span class="mono">01 / STARTUP</span><strong>AxisOS 2.0 boot screen</strong></figcaption>
+          </figure>
+          <figure class="preview-figure">
+            <img src="VirtualBox_AOS2_03_10_2026_18_38_46.png" alt="AxisOS desktop with its top bar, desktop shortcuts, and application dock" loading="lazy" />
+            <figcaption><span class="mono">02 / DESKTOP</span><strong>AxisOS live desktop in VirtualBox</strong></figcaption>
+          </figure>
+          <figure class="preview-figure">
+            <img src="VirtualBox_AOS2_03_10_2026_18_40_06.png" alt="AxisOS display settings showing monitor layout, resolution, refresh rate, and scaling" loading="lazy" />
+            <figcaption><span class="mono">03 / SETTINGS</span><strong>Display and hardware controls</strong></figcaption>
+          </figure>
+          <figure class="preview-figure">
+            <img src="VirtualBox_AOS2_03_10_2026_18_41_20.png" alt="AxisOS browser window layered over system settings and the music player" loading="lazy" />
+            <figcaption><span class="mono">04 / APPS</span><strong>Browser and desktop apps</strong></figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="content-section">
+        <p class="section-label">INSIDE AXISOS</p>
+        <div class="feature-list">
+          <article class="feature-item"><span>01 / UI</span><div><h2>Desktop shell</h2><p>A custom desktop environment with window management, dock, top bar, and control center.</p></div></article>
+          <article class="feature-item"><span>02 / TOOLS</span><div><h2>Everyday applications</h2><p>Built-in experiences for browsing, files, terminal, system settings, and software management.</p></div></article>
+          <article class="feature-item"><span>03 / INSTALL</span><div><h2>Live system and installer</h2><p>Boot the live environment to explore AxisOS, or follow the project installation guide.</p></div></article>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap site-footer"><div class="footer-inner"><p>© <span id="year"></span> Axis Technologies · A 12links company</p><div class="footer-links"><a href="people.html">People</a><a href="about.html">About</a><a href="https://github.com/jackyphuti/AxisOS/issues" target="_blank" rel="noreferrer">Contribute ↗</a></div></div></footer>
+    <script src="site.js" defer></script>
+  </body>
+</html>
