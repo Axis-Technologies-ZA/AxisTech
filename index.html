@@ -344,20 +344,21 @@
     </style>
     <link rel="stylesheet" href="site.css" />
   </head>
-  <body>
-    <header class="wrap header">
-      <a class="brand" href="#top" aria-label="Axis Technologies home">
+  <body class="home-page">
+    <header class="wrap header site-header">
+      <a class="brand" href="index.html" aria-label="Axis Technologies home">
         <span class="brand-mark" aria-hidden="true">▲</span>
         <span><span class="brand-name">Axis Technologies</span><span class="brand-sub">AN OPEN TECHNOLOGY COMPANY</span></span>
       </a>
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">+</button>
       <nav class="nav site-nav" aria-label="Main navigation">
         <a href="index.html" aria-current="page">Home</a>
-        <a href="projects.html">Projects</a>
+        <a href="projects.html">AxisOS</a>
+        <a href="install.html">Install Guide</a>
         <a href="people.html">People</a>
         <a href="approach.html">Approach</a>
         <a href="about.html">About</a>
-        <a class="nav-cta" href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">Explore on GitHub <span aria-hidden="true">↗</span></a>
+        <a class="nav-cta" href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">GitHub Repo ↗</a>
       </nav>
     </header>
 
@@ -367,29 +368,73 @@
           <source src="Axisvid.mp4" type="video/mp4" />
         </video>
         <div class="wrap home-hero-content">
-          <p class="eyebrow mono">AXIS TECHNOLOGIES / SYSTEMS ONLINE</p>
-          <h1 id="hero-title">Build beyond<br />the <span>expected.</span></h1>
-          <p class="hero-intro">Independent ideas. Open technology. Axis Technologies is building practical software for a more capable digital world, starting with AxisOS.</p>
+          <p class="eyebrow mono">AXIS TECHNOLOGIES / OPERATING SYSTEM ONLINE</p>
+          <h1 id="hero-title">Build beyond<br />the <span style="color: #87cf3e;">expected.</span></h1>
+          <p class="hero-intro">
+            Independent ideas. Open technology. Axis Technologies is building practical, resilient software for a more capable computing world — featuring <strong>AxisOS 2.0</strong> with the flagship Cinnamon desktop, X-Apps, and pre-installed Steam gaming.
+          </p>
           <div class="hero-actions">
-            <a class="button" href="projects.html">Explore AxisOS <span class="arrow" aria-hidden="true">↗</span></a>
-            <a class="button secondary" href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">View the source <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="button" href="projects.html" style="background: #141b16; border-color: #87cf3e; color: #87cf3e;">Explore AxisOS <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="button secondary" href="install.html">Installation Guide <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="button secondary" href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">Source Code ↗</a>
           </div>
         </div>
       </section>
 
+      <!-- Key Channels -->
       <section class="wrap route-index" aria-label="Explore Axis Technologies">
         <p class="mono route-kicker">EXPLORE AXIS / SELECT A CHANNEL</p>
-        <a class="route-link" href="projects.html"><span class="mono">01</span><span><strong>Projects</strong><small>Open technology in progress</small></span><span class="route-arrow" aria-hidden="true">↗</span></a>
-        <a class="route-link" href="people.html"><span class="mono">02</span><span><strong>People</strong><small>The contributors behind AxisOS</small></span><span class="route-arrow" aria-hidden="true">↗</span></a>
-        <a class="route-link" href="approach.html"><span class="mono">03</span><span><strong>Approach</strong><small>How we think about technology</small></span><span class="route-arrow" aria-hidden="true">↗</span></a>
-        <a class="route-link" href="about.html"><span class="mono">04</span><span><strong>About Axis</strong><small>Our company and 12links</small></span><span class="route-arrow" aria-hidden="true">↗</span></a>
+        <a class="route-link" href="projects.html"><span class="mono">01</span><span><strong>AxisOS Architecture &amp; Features</strong><small>Debian Bookworm, Cinnamon DE, Muffin C engine &amp; GTK</small></span><span class="route-arrow" aria-hidden="true">↗</span></a>
+        <a class="route-link" href="install.html"><span class="mono">02</span><span><strong>Installation &amp; Setup Guide</strong><small>USB creation with Rufus/Etcher, BIOS boot, and step-by-step wizard</small></span><span class="route-arrow" aria-hidden="true">↗</span></a>
+        <a class="route-link" href="people.html"><span class="mono">03</span><span><strong>People &amp; Contributors</strong><small>The team behind AxisOS development</small></span><span class="route-arrow" aria-hidden="true">↗</span></a>
+        <a class="route-link" href="approach.html"><span class="mono">04</span><span><strong>Engineering Approach</strong><small>Why we design for durability, clarity, and open tools</small></span><span class="route-arrow" aria-hidden="true">↗</span></a>
+        <a class="route-link" href="about.html"><span class="mono">05</span><span><strong>About Axis Technologies</strong><small>Our company and 12links network</small></span><span class="route-arrow" aria-hidden="true">↗</span></a>
+      </section>
+
+      <!-- AxisOS Snapshot Highlight Section -->
+      <section class="wrap content-section" style="padding-top: 20px;">
+        <p class="section-label">FLAGSHIP OPERATING SYSTEM</p>
+        <h2 class="preview-heading">What makes AxisOS different.</h2>
+        <p class="section-copy">
+          Designed for developers, gamers, and daily computer users who demand traditional desktop ergonomics, full hardware acceleration, and the stability of Debian without unwanted bloat.
+        </p>
+
+        <div class="data-grid" style="margin-top: 26px;">
+          <div class="data-cell">
+            <span>CORE DESKTOP</span>
+            <strong>Cinnamon &amp; Muffin (C / CJS)</strong>
+          </div>
+          <div class="data-cell">
+            <span>DESIGN PHILOSOPHY</span>
+            <strong>X-Apps &amp; Black/White/Green</strong>
+          </div>
+          <div class="data-cell">
+            <span>GAMING SUBSYSTEM</span>
+            <strong>Steam Pre-Installed (Proton 9.0)</strong>
+          </div>
+          <div class="data-cell">
+            <span>PACKAGE ENGINE</span>
+            <strong>APT, dpkg, axis &amp; Flatpak</strong>
+          </div>
+        </div>
+
+        <div class="action-row" style="margin-top: 32px;">
+          <a class="action-link" href="install.html">Read the Complete Installation Guide ↗</a>
+          <a class="action-link" href="https://github.com/jackyphuti/AxisOS/releases" target="_blank" rel="noreferrer">Get Hybrid UEFI+BIOS ISO (1.42 GB) ↗</a>
+        </div>
       </section>
     </main>
 
-    <footer class="wrap footer">
+    <footer class="wrap site-footer">
       <div class="footer-inner">
         <p>© <span id="year"></span> Axis Technologies · A 12links company</p>
-        <div class="footer-links"><a href="projects.html">Projects</a><a href="about.html">About</a><a href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+        <div class="footer-links">
+          <a href="projects.html">AxisOS</a>
+          <a href="install.html">Install Guide</a>
+          <a href="people.html">People</a>
+          <a href="about.html">About</a>
+          <a href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
       </div>
     </footer>
 

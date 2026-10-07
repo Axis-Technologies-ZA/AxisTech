@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a0e0b" />
+    <meta name="description" content="Official installation guide for AxisOS. Learn hardware requirements, USB creation with Rufus or Etcher, BIOS/UEFI boot settings, and setup wizard steps." />
+    <title>Install AxisOS — Official Installation Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <header class="wrap header site-header">
+      <a class="brand" href="index.html" aria-label="Axis Technologies home">
+        <span class="brand-mark" aria-hidden="true">▲</span>
+        <span><span class="brand-name">Axis Technologies</span><span class="brand-sub">AN OPEN TECHNOLOGY COMPANY</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">+</button>
+      <nav class="nav site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html">AxisOS</a>
+        <a href="install.html" aria-current="page">Install Guide</a>
+        <a href="people.html">People</a>
+        <a href="approach.html">Approach</a>
+        <a href="about.html">About</a>
+        <a class="nav-cta" href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">GitHub Repo ↗</a>
+      </nav>
+    </header>
+
+    <main class="wrap inner-page">
+      <!-- Page Hero -->
+      <section class="page-hero">
+        <p class="page-kicker">DOCUMENTATION / DEPLOYMENT GUIDE</p>
+        <h1 class="page-title">How to Install <span class="accent">AxisOS</span></h1>
+        <p class="page-summary">
+          Everything you need to flash, boot, and install AxisOS 2.0 on real PC hardware, gaming laptops, or virtual machines. AxisOS ships as a universal hybrid UEFI + Legacy BIOS live image with instant desktop testing.
+        </p>
+
+        <div class="action-row">
+          <a class="action-link" href="https://github.com/jackyphuti/AxisOS/releases" target="_blank" rel="noreferrer">Download ISO (1.42 GB) ↗</a>
+          <a class="action-link" href="#requirements">Hardware Requirements ↓</a>
+          <a class="action-link" href="#flashing">Create USB Drive ↓</a>
+          <a class="action-link" href="#troubleshooting">Troubleshooting FAQ ↓</a>
+        </div>
+      </section>
+
+      <!-- System Requirements -->
+      <section id="requirements" class="content-section">
+        <p class="section-label">SYSTEM COMPATIBILITY</p>
+        <h2 class="preview-heading">Hardware Requirements</h2>
+        <p class="section-copy">
+          AxisOS runs on standard 64-bit x86 hardware. It is optimized for responsiveness on modern NVMe drives while remaining fully compatible with older SATA SSDs and HDDs.
+        </p>
+
+        <table class="spec-table" aria-label="System Requirements">
+          <thead>
+            <tr>
+              <th>COMPONENT</th>
+              <th>MINIMUM SPECIFICATION</th>
+              <th>RECOMMENDED (GAMING &amp; DEV)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Processor</strong></td>
+              <td>64-bit Dual-Core x86_64 CPU (Intel / AMD)</td>
+              <td>Quad-Core 2.5 GHz+ (Intel Core i5/i7/i9 or AMD Ryzen)</td>
+            </tr>
+            <tr>
+              <td><strong>Memory (RAM)</strong></td>
+              <td>4 GB System RAM</td>
+              <td>8 GB to 16 GB+ for Steam gaming and compilation</td>
+            </tr>
+            <tr>
+              <td><strong>Storage</strong></td>
+              <td>25 GB Available Disk Space</td>
+              <td>60 GB+ High-Speed NVMe or SATA SSD (Btrfs root)</td>
+            </tr>
+            <tr>
+              <td><strong>Graphics (GPU)</strong></td>
+              <td>Intel HD Graphics, AMD Radeon, or NVIDIA GT/GTX</td>
+              <td>NVIDIA RTX/GTX (PRIME Offload), AMD Radeon RDNA (FreeSync), or Intel Arc</td>
+            </tr>
+            <tr>
+              <td><strong>Motherboard Firmware</strong></td>
+              <td>Legacy BIOS or 64-bit UEFI</td>
+              <td>Modern UEFI with GPT Partition Table &amp; AHCI SATA Mode</td>
+            </tr>
+            <tr>
+              <td><strong>Display Resolution</strong></td>
+              <td>1280 × 720 (720p HD)</td>
+              <td>1920 × 1080 (1080p FHD) or 4K with Fractional Scaling</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout-box">
+          <strong>Secure Boot Support:</strong>
+          AxisOS includes a Microsoft-signed Shim (<code>BOOTX64.EFI</code>) and Debian-signed GRUB EFI binary for out-of-the-box Secure Boot support on most OEM motherboards. If your machine encounters an unauthorized key signature error, simply disable Secure Boot in your BIOS settings.
+        </div>
+      </section>
+
+      <!-- Step-by-Step Installation Journey -->
+      <section class="content-section">
+        <p class="section-label">WALKTHROUGH</p>
+        <h2 class="preview-heading">Step-by-Step Installation</h2>
+        <p class="section-copy">Follow these steps sequentially to prepare your media, test your hardware live, and install AxisOS.</p>
+
+        <div class="install-grid">
+          <!-- Step 1 -->
+          <article class="step-card">
+            <div>
+              <div class="step-card-header">
+                <span class="step-num">STEP 01</span>
+                <span class="step-tag">DOWNLOAD &amp; VERIFY</span>
+              </div>
+              <h3>Download the ISO Image</h3>
+              <p>
+                Obtain the latest stable hybrid ISO (<code>axisos-v2.0-live-amd64.iso</code>). Verify the SHA256 checksum to guarantee file integrity before flashing.
+              </p>
+            </div>
+            <div class="code-block">
+              <span class="prompt">$</span>sha256sum axisos-v2.0-live-amd64.iso<br />
+              <span class="mono" style="color: #94a3b8;"># Compare output against SHA256SUMS</span>
+            </div>
+          </article>
+
+          <!-- Step 2 -->
+          <article class="step-card" id="flashing">
+            <div>
+              <div class="step-card-header">
+                <span class="step-num">STEP 02</span>
+                <span class="step-tag">MEDIA CREATION</span>
+              </div>
+              <h3>Flash to a USB Flash Drive</h3>
+              <p>
+                Use an 8 GB or larger USB flash drive. Select your favorite imaging tool:
+              </p>
+              <ul style="margin: 0 0 10px; padding-left: 18px; font-size: 13px; color: #4e5b6b; line-height: 1.6;">
+                <li><strong>Rufus (Windows):</strong> Select Partition Scheme <code>GPT</code>, Target <code>UEFI</code>. Choose <em>Write in DD Image mode</em> if prompted.</li>
+                <li><strong>balenaEtcher:</strong> Select ISO &gt; Select Drive &gt; Flash.</li>
+                <li><strong>Ventoy:</strong> Simply drag and drop the <code>.iso</code> file onto your Ventoy USB drive.</li>
+              </ul>
+            </div>
+            <div class="code-block">
+              <span class="prompt"># Linux CLI:</span><br />
+              <span class="prompt">$</span>sudo dd if=axisos-v2.0-live-amd64.iso of=/dev/sdX bs=4M status=progress oflag=sync
+            </div>
+          </article>
+
+          <!-- Step 3 -->
+          <article class="step-card">
+            <div>
+              <div class="step-card-header">
+                <span class="step-num">STEP 03</span>
+                <span class="step-tag">FIRMWARE &amp; BOOT</span>
+              </div>
+              <h3>Boot into AxisOS Media</h3>
+              <p>
+                Insert the USB drive into your powered-off computer. Power on and immediately tap your vendor's Boot Menu key to choose your USB device.
+              </p>
+              <div style="font-size: 12px; font-family: var(--mono); color: #4e5b6b; margin-top: 6px;">
+                • ASUS: <span class="spec-badge">F8</span> &nbsp;• Dell: <span class="spec-badge">F12</span> &nbsp;• HP: <span class="spec-badge">F9</span><br />
+                • Lenovo: <span class="spec-badge">F12</span> &nbsp;• Acer: <span class="spec-badge">F12</span> &nbsp;• MSI: <span class="spec-badge">F11</span>
+              </div>
+            </div>
+            <p style="margin-top: 12px; font-size: 12px; color: #64748b;">
+              <em>Tip: If Windows boots immediately, hold Shift while clicking "Restart" in Windows, then choose "Use a device" &gt; USB Drive.</em>
+            </p>
+          </article>
+
+          <!-- Step 4 -->
+          <article class="step-card">
+            <div>
+              <div class="step-card-header">
+                <span class="step-num">STEP 04</span>
+                <span class="step-tag">LIVE TESTING</span>
+              </div>
+              <h3>Explore the Live Desktop</h3>
+              <p>
+                In the GRUB boot menu, select <strong>"Try AxisOS 2.0 (Live Desktop)"</strong>. The system loads entirely into RAM without modifying your internal hard drive.
+              </p>
+              <p>
+                Test your Wi-Fi, monitor resolution, sound playback, and hardware brightness toggle to ensure complete hardware compatibility.
+              </p>
+            </div>
+            <div class="badge-accent">
+              <span>●</span> RAM-Only Safe Exploration Mode
+            </div>
+          </article>
+
+          <!-- Step 5 -->
+          <article class="step-card">
+            <div>
+              <div class="step-card-header">
+                <span class="step-num">STEP 05</span>
+                <span class="step-tag">SETUP WIZARD</span>
+              </div>
+              <h3>Run the AxisOS Installer</h3>
+              <p>
+                Double-click <strong>"Install AxisOS"</strong> on the desktop. The wizard guides you through:
+              </p>
+              <ul style="margin: 0 0 10px; padding-left: 18px; font-size: 13px; color: #4e5b6b; line-height: 1.6;">
+                <li><strong>Target Disk:</strong> Choose your SSD or NVMe drive.</li>
+                <li><strong>Filesystem:</strong> Automatically generates EFI FAT32 and robust Btrfs root partitions.</li>
+                <li><strong>User Account:</strong> Set your full name, username, computer hostname, and password.</li>
+              </ul>
+            </div>
+            <div class="code-block">
+              <span class="prompt">$</span>axisos-installer &amp;
+            </div>
+          </article>
+
+          <!-- Step 6 -->
+          <article class="step-card">
+            <div>
+              <div class="step-card-header">
+                <span class="step-num">STEP 06</span>
+                <span class="step-tag">FINISH &amp; REBOOT</span>
+              </div>
+              <h3>Reboot into Your New System</h3>
+              <p>
+                Once the installer shows <em>"Installation Complete"</em>, click <strong>Restart Now</strong>, remove the USB drive when prompted, and press Enter.
+              </p>
+              <p>
+                Your computer boots straight into the Cinnamon desktop with hardware acceleration, pre-configured Steam gaming, and full APT package management.
+              </p>
+            </div>
+            <div class="badge-accent">
+              <span>✓</span> Zero Post-Install Driver Hunting Required
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Post-Installation & Package Management -->
+      <section class="content-section">
+        <p class="section-label">FIRST STEPS</p>
+        <h2 class="preview-heading">Post-Install Configuration</h2>
+        <div class="feature-list">
+          <article class="feature-item">
+            <span>01 / PKG</span>
+            <div>
+              <h3>System Updates &amp; Repositories</h3>
+              <p>
+                AxisOS uses standard Debian Bookworm repositories alongside the Axis repository. Update your system using the GUI Update Manager or terminal:
+              </p>
+              <div class="code-block">
+                <span class="prompt">$</span>sudo apt update &amp;&amp; sudo apt upgrade -y
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>02 / APPS</span>
+            <div>
+              <h3>Installing Applications</h3>
+              <p>
+                Browse thousands of apps in the native Software Manager or install via command line using APT, dpkg, or Flatpak sandboxes:
+              </p>
+              <div class="code-block">
+                <span class="prompt"># Native APT:</span><br />
+                <span class="prompt">$</span>sudo apt install vlc git build-essential<br />
+                <span class="prompt"># Flatpak Sandbox:</span><br />
+                <span class="prompt">$</span>flatpak install flathub com.discordapp.Discord
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>03 / GAME</span>
+            <div>
+              <h3>Steam &amp; Proton Gaming Subsystem</h3>
+              <p>
+                Steam is pre-installed in the application menu. AxisOS automatically configures high <code>vm.max_map_count</code>, 32-bit Vulkan drivers, and Feral GameMode for high-FPS AAA gaming.
+              </p>
+              <div class="code-block">
+                <span class="prompt"># Launch Steam with PRIME NVIDIA Offload (laptops):</span><br />
+                <span class="prompt">$</span>prime-run steam
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Troubleshooting FAQ -->
+      <section id="troubleshooting" class="content-section">
+        <p class="section-label">ASSISTANCE</p>
+        <h2 class="preview-heading">Troubleshooting &amp; Frequently Asked Questions</h2>
+
+        <div class="faq-grid">
+          <div class="step-card">
+            <h3>Black Screen or GPU Freeze during Boot?</h3>
+            <p>
+              Some dedicated NVIDIA graphics cards require the basic modesetting framebuffer during initial live boot. In the GRUB boot menu, choose option <strong>3. AxisOS 2.0 (Safe Graphics Mode - nomodeset)</strong>. Once installed, the system's autodetection daemon will configure proprietary NVIDIA drivers.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <h3>VirtualBox / VMware Installation Settings</h3>
+            <p>
+              When running in a virtual machine, ensure you configure:
+            </p>
+            <ul style="margin: 0; padding-left: 18px; font-size: 13px; color: #4e5b6b; line-height: 1.6;">
+              <li>Enable EFI (special OSes only) in System settings.</li>
+              <li>Allocate at least 4 CPU cores and 4096 MB RAM.</li>
+              <li>Set Video Memory to 128 MB and select VMSVGA with 3D Acceleration enabled.</li>
+            </ul>
+          </div>
+
+          <div class="step-card">
+            <h3>Dual-Booting Alongside Windows 11</h3>
+            <p>
+              Disable <strong>Fast Startup</strong> in the Windows Control Panel (Power Options) before installing. During installation, do not format your existing Windows EFI partition; AxisOS will install alongside it and automatically detect Windows in the GRUB boot menu.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <h3>Wi-Fi Card Requires Proprietary Firmware?</h3>
+            <p>
+              AxisOS includes Debian non-free-firmware packages by default (Intel Wi-Fi, Realtek, Broadcom). If an uncommon card is not recognized, temporarily connect Ethernet or USB tethering from your smartphone to download drivers via <code>sudo apt install firmware-linux-nonfree</code>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Callout -->
+      <section class="content-section" style="border-bottom: 0;">
+        <p class="section-label">COMMUNITY &amp; SOURCE</p>
+        <h2 class="preview-heading">Need more help or want to contribute?</h2>
+        <p class="section-copy">
+          AxisOS is an open-source project created and maintained by Axis Technologies. You can file issues, submit pull requests, or browse the complete build system scripts on GitHub.
+        </p>
+        <div class="action-row">
+          <a class="action-link" href="https://github.com/jackyphuti/AxisOS/issues" target="_blank" rel="noreferrer">Open a GitHub Issue ↗</a>
+          <a class="action-link" href="projects.html">Explore AxisOS Specs ↗</a>
+          <a class="action-link" href="about.html">About Axis Technologies ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap site-footer">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Axis Technologies · A 12links company</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="projects.html">AxisOS</a>
+          <a href="install.html">Install Guide</a>
+          <a href="people.html">People</a>
+          <a href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="site.js" defer></script>
+  </body>
+</html>

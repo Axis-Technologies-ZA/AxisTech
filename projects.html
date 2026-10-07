@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f5f8fc" />
-    <meta name="description" content="Explore open-source projects from Axis Technologies, starting with AxisOS." />
-    <title>Projects — Axis Technologies</title>
+    <meta name="theme-color" content="#0a0e0b" />
+    <meta name="description" content="Technical architecture, design philosophy, and specifications for AxisOS — a Debian-based Linux operating system with Cinnamon desktop, X-Apps, and pre-installed Steam." />
+    <title>AxisOS — Projects — Axis Technologies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -13,53 +13,258 @@
   </head>
   <body>
     <header class="wrap header site-header">
-      <a class="brand" href="index.html" aria-label="Axis Technologies home"><span class="brand-mark" aria-hidden="true">▲</span><span><span class="brand-name">Axis Technologies</span><span class="brand-sub">AN OPEN TECHNOLOGY COMPANY</span></span></a>
+      <a class="brand" href="index.html" aria-label="Axis Technologies home">
+        <span class="brand-mark" aria-hidden="true">▲</span>
+        <span><span class="brand-name">Axis Technologies</span><span class="brand-sub">AN OPEN TECHNOLOGY COMPANY</span></span>
+      </a>
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">+</button>
-      <nav class="nav site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="projects.html" aria-current="page">Projects</a><a href="people.html">People</a><a href="approach.html">Approach</a><a href="about.html">About</a><a class="nav-cta" href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">Explore on GitHub ↗</a></nav>
+      <nav class="nav site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html" aria-current="page">AxisOS</a>
+        <a href="install.html">Install Guide</a>
+        <a href="people.html">People</a>
+        <a href="approach.html">Approach</a>
+        <a href="about.html">About</a>
+        <a class="nav-cta" href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">Explore on GitHub ↗</a>
+      </nav>
     </header>
+
     <main class="wrap inner-page">
+      <!-- Project Hero -->
       <section class="page-hero">
         <p class="page-kicker">PROJECT FILE / 001</p>
         <h1 class="page-title">Axis<span class="accent">OS</span></h1>
-        <p class="page-summary">A Debian-based Linux operating system bringing together the Linux kernel, Cage Wayland compositor, and a custom desktop shell.</p>
-        <div class="action-row"><a class="action-link" href="https://github.com/jackyphuti/AxisOS/releases" target="_blank" rel="noreferrer">Get the latest release ↗</a><a class="action-link" href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">Browse the source ↗</a><a class="action-link" href="https://github.com/jackyphuti/AxisOS/blob/main/INSTALLATION_GUIDE.md" target="_blank" rel="noreferrer">Installation guide ↗</a></div>
+        <p class="page-summary">
+          A high-performance Debian-based Linux operating system pairing the rock-solid stability of Debian Bookworm with the flagship Cinnamon desktop environment, high-speed C/CJS window management, GTK visual consistency, and out-of-the-box AAA gaming capabilities.
+        </p>
+
+        <div class="action-row">
+          <a class="action-link" href="install.html">Installation Guide &amp; Specs ↗</a>
+          <a class="action-link" href="https://github.com/jackyphuti/AxisOS/releases" target="_blank" rel="noreferrer">Download ISO (1.42 GB) ↗</a>
+          <a class="action-link" href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">Browse Source Code ↗</a>
+        </div>
       </section>
+
+      <!-- System Profile Grid -->
       <section class="content-section">
-        <p class="section-label">SYSTEM PROFILE</p>
-        <div class="data-grid"><div class="data-cell"><span>BASE SYSTEM</span><strong>Debian Linux</strong></div><div class="data-cell"><span>DISPLAY</span><strong>Cage / Wayland</strong></div><div class="data-cell"><span>ARCHITECTURE</span><strong>x86_64</strong></div><div class="data-cell"><span>LICENSE</span><strong>GPL-3.0</strong></div></div>
+        <p class="section-label">SYSTEM PROFILE &amp; CORE STACK</p>
+        <div class="data-grid">
+          <div class="data-cell">
+            <span>BASE DISTRIBUTION</span>
+            <strong>Debian Bookworm (12)</strong>
+          </div>
+          <div class="data-cell">
+            <span>DESKTOP ENVIRONMENT</span>
+            <strong>Cinnamon &amp; Muffin (C / CJS)</strong>
+          </div>
+          <div class="data-cell">
+            <span>UI TOOLKIT</span>
+            <strong>GTK3 / GTK4 Consistent</strong>
+          </div>
+          <div class="data-cell">
+            <span>PACKAGE MANAGERS</span>
+            <strong>APT, dpkg, axis &amp; Flatpak</strong>
+          </div>
+        </div>
       </section>
+
+      <!-- Architecture Breakdown -->
+      <section class="content-section">
+        <p class="section-label">SYSTEM ARCHITECTURE</p>
+        <h2 class="preview-heading">Engineered for Reliability &amp; Speed</h2>
+        <p class="section-copy">
+          AxisOS rejects over-simplified mobile interfaces in favor of proven desktop engineering paradigms. Every layer of the operating system is built with native code, shared C libraries, and reactive runtime scripts.
+        </p>
+
+        <div class="feature-list" style="margin-top: 28px;">
+          <article class="feature-item">
+            <span>01 / DE</span>
+            <div>
+              <h3>Flagship Cinnamon Desktop &amp; Muffin Compositor</h3>
+              <p>
+                The primary desktop environment relies on <strong>Muffin</strong>, a C-based window manager that drives window decorations, GPU-accelerated compositing, and rendering. The outer UI, smooth applet animations, status trays, and desklets are scripted in <strong>CJS</strong> (Cinnamon JavaScript runtime, a fork of GNOME's GJS), enabling rapid customization with native performance.
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">Cinnamon Desktop</span>
+                <span class="tech-pill">Muffin Window Manager (C)</span>
+                <span class="tech-pill">CJS (JavaScript Runtime)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>02 / GTK</span>
+            <div>
+              <h3>GTK Graphical Interface Toolkit</h3>
+              <p>
+                Across the OS, every native application renders through <strong>GTK (GTK3 &amp; GTK4)</strong>. GTK ensures pixel-perfect window scaling, uniform button states, crisp typography, and sub-pixel antialiasing across all resolutions from 720p to 4K displays.
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">GTK3 / GTK4</span>
+                <span class="tech-pill">libxapp C Libraries</span>
+                <span class="tech-pill">Fractional Display Scaling</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>03 / PYTHON</span>
+            <div>
+              <h3>Python &amp; C Native Tooling Suite</h3>
+              <p>
+                System configuration utilities, hardware monitors, the Update Manager, Software Center, and background telemetry daemons are developed in <strong>Python</strong> and <strong>C</strong>, leveraging shared C bindings (<code>python-xapp</code>). Heavy computational tasks (media rendering, file I/O) are handled in native C.
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">Python 3.11+</span>
+                <span class="tech-pill">Shared C Libraries</span>
+                <span class="tech-pill">Hardware Autodetect Daemons</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>04 / APPS</span>
+            <div>
+              <h3>The X-Apps Traditional Desktop Philosophy</h3>
+              <p>
+                Following the philosophy of traditional desktop computing, native applications retain classic menubars (File, Edit, View), dedicated toolbars, and information-dense status bars. Key tools are never hidden behind hamburger menus or stripped down to mobile-first simplicity.
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">Desktop Agnostic</span>
+                <span class="tech-pill">Functionality Over Minimalism</span>
+                <span class="tech-pill">Persistent Status Bars</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>05 / DISPLAY</span>
+            <div>
+              <h3>Display Server: Default X11 with Wayland Support</h3>
+              <p>
+                AxisOS defaults to the battle-tested <strong>X11</strong> display server for rock-solid NVIDIA driver support, universal screen capture, and multi-monitor compatibility, while shipping with experimental <strong>Wayland</strong> support (Cage compositor) for low-latency modern graphics.
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">X11 Default</span>
+                <span class="tech-pill">Cage Wayland Experimental</span>
+                <span class="tech-pill">Working Brightness Controls</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>06 / PKG</span>
+            <div>
+              <h3>Unified Package Management: APT, dpkg &amp; Flatpak</h3>
+              <p>
+                System software is maintained using Debian's time-tested <strong>APT</strong> and <strong>dpkg</strong> package infrastructure, augmented with our native <code>axis</code> command-line tool. Seamless integration with <strong>Flatpak</strong> allows sandboxed modern apps from Flathub to be installed with zero dependency conflicts.
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">Debian Repositories</span>
+                <span class="tech-pill">Axis Package Manager</span>
+                <span class="tech-pill">Flathub Sandboxing</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>07 / GAMING</span>
+            <div>
+              <h3>Pre-Installed Steam &amp; Proton Gaming Subsystem</h3>
+              <p>
+                Valve's <strong>Steam</strong> client comes pre-installed in the desktop menu. The operating system kernel is pre-configured with <code>vm.max_map_count = 2147483642</code>, 32-bit multiarch libraries, Vulkan 1.3 async shaders, Feral GameMode, and NVIDIA PRIME render offloading for AAA Windows game compatibility via Proton.
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">Steam Pre-Installed</span>
+                <span class="tech-pill">Proton 9.0 Compatibility</span>
+                <span class="tech-pill">Feral GameMode Active</span>
+                <span class="tech-pill">Vulkan 1.3 Ready</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>08 / STYLE</span>
+            <div>
+              <h3>Black, White &amp; Mint Green Visual Identity</h3>
+              <p>
+                AxisOS is clad in a distinctive, modern visual identity: deep obsidian blacks (<code>#0a0e0b</code>), crisp whites, and vibrant mint green accents (<code>#87cf3e</code>). All application icons are crafted as bespoke geometric vector tiles, deliberately avoiding generic macOS clones.
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">Deep Obsidian (#0a0e0b)</span>
+                <span class="tech-pill">Mint Green (#87cf3e)</span>
+                <span class="tech-pill">Geometric Vector Iconography</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Visual Preview Gallery -->
       <section class="content-section os-preview" aria-labelledby="preview-title">
-        <p class="section-label">AXISOS / VISUAL PREVIEW</p>
+        <p class="section-label">AXISOS / VISUAL GALLERY</p>
         <h2 class="preview-heading" id="preview-title">A look inside the system.</h2>
         <div class="os-preview-grid">
           <figure class="preview-figure preview-boot">
-            <img src="axisos-boot-preview.svg" alt="AxisOS 2.0 boot screen with the Axis triangle logo on black" loading="lazy" />
-            <figcaption><span class="mono">01 / STARTUP</span><strong>AxisOS 2.0 boot screen</strong></figcaption>
+            <img src="axisos-boot-preview.svg" alt="AxisOS 2.0 boot screen with Axis logo on black" loading="lazy" />
+            <figcaption>
+              <span class="mono">01 / STARTUP</span>
+              <strong>AxisOS Universal Bootloader &amp; Splash</strong>
+            </figcaption>
           </figure>
           <figure class="preview-figure">
             <img src="VirtualBox_AOS2_03_10_2026_18_38_46.png" alt="AxisOS desktop with its top bar, desktop shortcuts, and application dock" loading="lazy" />
-            <figcaption><span class="mono">02 / DESKTOP</span><strong>AxisOS live desktop in VirtualBox</strong></figcaption>
+            <figcaption>
+              <span class="mono">02 / DESKTOP</span>
+              <strong>AxisOS Live Desktop &amp; Ubuntu-style App Dock</strong>
+            </figcaption>
           </figure>
           <figure class="preview-figure">
             <img src="VirtualBox_AOS2_03_10_2026_18_40_06.png" alt="AxisOS display settings showing monitor layout, resolution, refresh rate, and scaling" loading="lazy" />
-            <figcaption><span class="mono">03 / SETTINGS</span><strong>Display and hardware controls</strong></figcaption>
+            <figcaption>
+              <span class="mono">03 / SETTINGS</span>
+              <strong>Display Settings &amp; Hardware Power Management</strong>
+            </figcaption>
           </figure>
           <figure class="preview-figure">
             <img src="VirtualBox_AOS2_03_10_2026_18_41_20.png" alt="AxisOS browser window layered over system settings and the music player" loading="lazy" />
-            <figcaption><span class="mono">04 / APPS</span><strong>Browser and desktop apps</strong></figcaption>
+            <figcaption>
+              <span class="mono">04 / APPS</span>
+              <strong>Multi-window Workflow &amp; Built-in Apps</strong>
+            </figcaption>
           </figure>
         </div>
       </section>
-      <section class="content-section">
-        <p class="section-label">INSIDE AXISOS</p>
-        <div class="feature-list">
-          <article class="feature-item"><span>01 / UI</span><div><h2>Desktop shell</h2><p>A custom desktop environment with window management, dock, top bar, and control center.</p></div></article>
-          <article class="feature-item"><span>02 / TOOLS</span><div><h2>Everyday applications</h2><p>Built-in experiences for browsing, files, terminal, system settings, and software management.</p></div></article>
-          <article class="feature-item"><span>03 / INSTALL</span><div><h2>Live system and installer</h2><p>Boot the live environment to explore AxisOS, or follow the project installation guide.</p></div></article>
+
+      <!-- Installation CTA -->
+      <section class="content-section" style="border-bottom: 0;">
+        <p class="section-label">GET STARTED</p>
+        <h2 class="preview-heading">Ready to try AxisOS?</h2>
+        <p class="section-copy">
+          Download the universal live image or read the step-by-step installation guide to set up AxisOS on your hardware.
+        </p>
+        <div class="action-row">
+          <a class="action-link" href="install.html">Read the Installation Guide ↗</a>
+          <a class="action-link" href="https://github.com/jackyphuti/AxisOS/releases" target="_blank" rel="noreferrer">Download Hybrid ISO (1.42 GB) ↗</a>
+          <a class="action-link" href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">View Repository on GitHub ↗</a>
         </div>
       </section>
     </main>
-    <footer class="wrap site-footer"><div class="footer-inner"><p>© <span id="year"></span> Axis Technologies · A 12links company</p><div class="footer-links"><a href="people.html">People</a><a href="about.html">About</a><a href="https://github.com/jackyphuti/AxisOS/issues" target="_blank" rel="noreferrer">Contribute ↗</a></div></div></footer>
+
+    <footer class="wrap site-footer">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Axis Technologies · A 12links company</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="projects.html">AxisOS</a>
+          <a href="install.html">Install Guide</a>
+          <a href="people.html">People</a>
+          <a href="about.html">About</a>
+          <a href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </footer>
+
     <script src="site.js" defer></script>
   </body>
 </html>
