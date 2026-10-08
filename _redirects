@@ -1,8 +1,7 @@
 # Cloudflare Pages Direct Downloads & Redirects
-# Static assets in /downloads/ are served directly by Cloudflare with HTTP 200.
-# The rules below provide fallback routing and cross-platform package distribution.
+# Static assets (including /Apex-Overdrive-Setup.exe and /downloads/Apex-Overdrive-Setup.exe)
+# are served directly by Cloudflare with HTTP 200 OK (no redirects).
 
-/Apex-Overdrive-Setup.exe /downloads/Apex-Overdrive-Setup.exe 302
 /Apex-Overdrive.exe https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/Apex.Overdrive.3.0.1.exe 302
 /downloads/apex-overdrive.deb https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/apex-overdrive_3.0.1_amd64.deb 302
 /downloads/apex-overdrive.rpm https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/apex-overdrive-3.0.1.x86_64.rpm 302
