@@ -1,10 +1,9 @@
 # Cloudflare Pages Direct Downloads & Redirects
-# Allows visitors to download binaries directly from the website domain
+# Static assets in /downloads/ are served directly by Cloudflare with HTTP 200.
+# The rules below provide fallback routing and cross-platform package distribution.
 
-/Apex-Overdrive-Setup.exe https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/Apex.Overdrive.Setup.3.0.1.exe 302!
-/Apex-Overdrive.exe https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/Apex.Overdrive.3.0.1.exe 302!
-/downloads/Apex-Overdrive-Setup.exe https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/Apex.Overdrive.Setup.3.0.1.exe 302!
-/downloads/Apex-Overdrive.exe https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/Apex.Overdrive.3.0.1.exe 302!
-/downloads/apex-overdrive.deb https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/apex-overdrive_3.0.1_amd64.deb 302!
-/downloads/apex-overdrive.rpm https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/apex-overdrive-3.0.1.x86_64.rpm 302!
-/downloads/apex-overdrive.tar.gz https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/apex-overdrive-3.0.1.tar.gz 302!
+/Apex-Overdrive-Setup.exe /downloads/Apex-Overdrive-Setup.exe 302
+/Apex-Overdrive.exe https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/Apex.Overdrive.3.0.1.exe 302
+/downloads/apex-overdrive.deb https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/apex-overdrive_3.0.1_amd64.deb 302
+/downloads/apex-overdrive.rpm https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/apex-overdrive-3.0.1.x86_64.rpm 302
+/downloads/apex-overdrive.tar.gz https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/apex-overdrive-3.0.1.tar.gz 302
