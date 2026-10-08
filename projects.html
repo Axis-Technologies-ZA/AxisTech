@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0a0e0b" />
-    <meta name="description" content="Technical architecture, design philosophy, and specifications for AxisOS — a Debian-based Linux operating system with Cinnamon desktop, X-Apps, and pre-installed Steam." />
-    <title>AxisOS — Projects — Axis Technologies</title>
+    <meta name="description" content="Technical architecture, design philosophy, and specifications for Axis Technologies software projects — AxisOS and Apex Overdrive." />
+    <title>Projects — Axis Technologies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -20,7 +20,7 @@
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">+</button>
       <nav class="nav site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="projects.html" aria-current="page">AxisOS</a>
+        <a href="projects.html" aria-current="page">Projects</a>
         <a href="install.html">Install Guide</a>
         <a href="people.html">People</a>
         <a href="approach.html">Approach</a>
@@ -30,8 +30,15 @@
     </header>
 
     <main class="wrap inner-page">
-      <!-- Project Hero -->
-      <section class="page-hero">
+      <!-- Project Switcher Tabs -->
+      <nav class="project-selector-bar" style="display: flex; gap: 12px; margin-bottom: 34px; padding-bottom: 16px; border-bottom: 1px solid var(--line); flex-wrap: wrap;" aria-label="Project Selection">
+        <a href="#axisos" class="tech-pill" style="padding: 9px 18px; font-weight: 600; font-size: 12px; text-decoration: none; border-color: #87cf3e; background: #87cf3e18; color: var(--ink);">📁 001 / AxisOS (Desktop OS)</a>
+        <a href="#apex-overdrive" class="tech-pill" style="padding: 9px 18px; font-weight: 600; font-size: 12px; text-decoration: none; border-color: #205fc7; background: #205fc718; color: var(--ink);">⚡ 002 / Apex Overdrive (Gaming Engine &amp; Cluster)</a>
+        <a href="#support" class="tech-pill" style="padding: 9px 18px; font-weight: 600; font-size: 12px; text-decoration: none; border-color: #f59e0b; background: #f59e0b18; color: var(--ink);">✉️ Support &amp; Inquiries</a>
+      </nav>
+
+      <!-- Project Hero: AxisOS -->
+      <section id="axisos" class="page-hero">
         <p class="page-kicker">PROJECT FILE / 001</p>
         <h1 class="page-title">Axis<span class="accent">OS</span></h1>
         <p class="page-summary">
@@ -254,18 +261,246 @@
           <a class="action-link" href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">View Repository on GitHub ↗</a>
         </div>
       </section>
+
+      <!-- DIVIDER -->
+      <hr style="margin: 64px 0 48px; border: 0; border-top: 1px solid var(--line);" />
+
+      <!-- PROJECT FILE / 002: APEX OVERDRIVE -->
+      <section id="apex-overdrive" class="page-hero">
+        <p class="page-kicker">PROJECT FILE / 002</p>
+        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 12px;">
+          <img src="apex-overdrive-logo.png" alt="Apex Overdrive Logo" style="width: 76px; height: 76px; border-radius: 14px; object-fit: cover; border: 1px solid #205fc744; box-shadow: 0 4px 20px #205fc720;" />
+          <div>
+            <h1 class="page-title" style="margin: 0;">Apex <span class="accent" style="color: #205fc7;">Overdrive</span></h1>
+            <span class="spec-badge" style="background: #205fc715; color: #205fc7; font-weight: 600; font-size: 11px; margin-top: 6px;">v3.0.1 STABLE RELEASE</span>
+          </div>
+        </div>
+        <p class="page-summary">
+          A high-octane desktop gaming performance engine and live telemetry cockpit for Windows and Linux. Built with a modern C++ native core and a GPU-accelerated automotive gauge cluster, Apex Overdrive automatically elevates game process priorities, unlocks 0.5ms multimedia scheduling resolution, bypasses CPU core parking, and flushes standby RAM lists when a game launches — reverting every modification cleanly on exit.
+        </p>
+
+        <div class="action-row">
+          <a class="action-link" href="https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/Apex.Overdrive.Setup.3.0.1.exe" target="_blank" rel="noreferrer" style="border-color: #205fc7; background: #205fc715;">Download Windows Setup (.exe) ↗</a>
+          <a class="action-link" href="https://github.com/jackyphuti/Game-Optimizer/releases/download/v3.0.1/Apex.Overdrive.3.0.1.exe" target="_blank" rel="noreferrer">Windows Portable (.exe) ↗</a>
+          <a class="action-link" href="https://github.com/jackyphuti/Game-Optimizer/releases/tag/v3.0.1" target="_blank" rel="noreferrer">Linux Packages (.deb / .rpm) ↗</a>
+          <a class="action-link" href="https://github.com/jackyphuti/Game-Optimizer" target="_blank" rel="noreferrer">Browse Source Code ↗</a>
+        </div>
+      </section>
+
+      <!-- Apex Overdrive System Profile -->
+      <section class="content-section">
+        <p class="section-label">SYSTEM PROFILE &amp; CORE STACK</p>
+        <div class="data-grid">
+          <div class="data-cell">
+            <span>CORE ENGINE</span>
+            <strong>Modern C++ (C++17 / C++20)</strong>
+          </div>
+          <div class="data-cell">
+            <span>COCKPIT UI</span>
+            <strong>Electron 44 + Canvas Cluster</strong>
+          </div>
+          <div class="data-cell">
+            <span>KERNEL HOOKS</span>
+            <strong>Win32 NTAPI / Linux /proc</strong>
+          </div>
+          <div class="data-cell">
+            <span>ROLLBACK ARCHITECTURE</span>
+            <strong>Transactional RAII Journal</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- Apex Overdrive Feature Breakdown -->
+      <section class="content-section">
+        <p class="section-label">OPTIMIZATION SUITE</p>
+        <h2 class="preview-heading">Maximum FPS. Zero Micro-Stutters.</h2>
+        <p class="section-copy">
+          Apex Overdrive combines low-level operating system engineering with an immersive cyberpunk automotive racing aesthetic, providing tactile control and visual instrumentation over your hardware.
+        </p>
+
+        <div class="feature-list" style="margin-top: 28px;">
+          <article class="feature-item">
+            <span>01 / CLUSTER</span>
+            <div>
+              <h3>Automotive Car Cluster Cockpit &amp; Shift LEDs</h3>
+              <p>
+                Canvas-rendered instrument cluster featuring real-time tachometer &amp; speedometer dials for <strong>CPU Load</strong>, <strong>GPU Engine</strong>, and <strong>RAM Boost Utilization</strong>. Features authentic sports car ignition needle sweeps and a 10-stage sequential shift-light LED bar (Green → Amber → Redline).
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">Spring Needle Physics</span>
+                <span class="tech-pill">10-Stage Shift Lights</span>
+                <span class="tech-pill">Center HUD Telemetry</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>02 / BENCHMARK</span>
+            <div>
+              <h3>Automated PC Hardware Benchmark Scanner</h3>
+              <p>
+                Deep hardware inspection module that scans CPU architecture, physical/logical cores, dedicated GPU VRAM, memory speed, and NVMe SSD DirectStorage readiness upon launch, computing your official <strong>Gaming Capability Benchmark Score</strong> (Tier S+, S, A, or B).
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">Full HW Topology Scan</span>
+                <span class="tech-pill">Gaming Capability Score</span>
+                <span class="tech-pill">DirectStorage Verification</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>03 / TURBO</span>
+            <div>
+              <h3>Warp Drive Turbo Boost &amp; 0.5ms Timer Resolution</h3>
+              <p>
+                Unlocks aggressive CPU turbo boost mode, unparks 100% of CPU cores to prevent low-power sleep state delays, and lowers the Windows scheduling quantum from 15.6ms to <strong>0.500ms</strong> for the lowest possible input latency and smoothest frame pacing.
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">0.5ms High-Precision Timer</span>
+                <span class="tech-pill">CPU Core Unparking</span>
+                <span class="tech-pill">Network Nagle Optimizer</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>04 / MEMORY</span>
+            <div>
+              <h3>Instant Standby RAM Purge</h3>
+              <p>
+                Flushes cached standby memory lists and trims non-essential background process working sets on demand with pneumatic blow-off valve audio feedback, freeing gigabytes of memory without needing a reboot.
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">Standby Memory Flush</span>
+                <span class="tech-pill">EmptyWorkingSet API</span>
+                <span class="tech-pill">Pneumatic Audio FX</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>05 / GPU</span>
+            <div>
+              <h3>DirectX Discrete GPU Routing &amp; Clocks</h3>
+              <p>
+                Forces gaming executables directly to high-performance discrete GPUs via DirectX preferences, while interfacing with NVIDIA NVAPI and AMD ADL drivers to lock maximum performance clock states (P0).
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">DirectX GPU Routing</span>
+                <span class="tech-pill">NVAPI &amp; AMD ADL</span>
+                <span class="tech-pill">Max P0 Clock State</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-item">
+            <span>06 / SAFETY</span>
+            <div>
+              <h3>Transactional RAII Safety &amp; Clean Rollback</h3>
+              <p>
+                Zero permanent system damage. Every optimization is guarded by RAII objects and a disk-backed rollback journal. Revert all tweaks back to factory defaults at any time with a single click or automatically upon game exit.
+              </p>
+              <div style="margin-top: 8px;">
+                <span class="tech-pill">RAII Rollback Guards</span>
+                <span class="tech-pill">Crash-Resilient Journal</span>
+                <span class="tech-pill">Zero Permanent Changes</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Apex Overdrive Technical Specs -->
+      <section class="content-section">
+        <p class="section-label">TECHNICAL SPECIFICATIONS</p>
+        <table class="spec-table" aria-label="Apex Overdrive Specifications">
+          <thead>
+            <tr>
+              <th>COMPONENT</th>
+              <th>SPECIFICATION</th>
+              <th>PLATFORM DETAILS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Supported OS</strong></td>
+              <td>Windows 10 / 11 (64-bit) &amp; Modern Linux</td>
+              <td><span class="spec-badge">Cross-Platform</span></td>
+            </tr>
+            <tr>
+              <td><strong>Kernel Hook API</strong></td>
+              <td>Win32 NTAPI, PowerCfg, /proc, cpupower</td>
+              <td><span class="spec-badge">Native C++</span></td>
+            </tr>
+            <tr>
+              <td><strong>Timer Quantum</strong></td>
+              <td>0.500 ms (Precision Multimedia Timer)</td>
+              <td><span class="spec-badge">Micro-Stutter Free</span></td>
+            </tr>
+            <tr>
+              <td><strong>Rollback Engine</strong></td>
+              <td>RAII Guard + Active Session Disk Journal</td>
+              <td><span class="spec-badge">100% Safe</span></td>
+            </tr>
+            <tr>
+              <td><strong>License</strong></td>
+              <td>MIT License (Free &amp; Open Source)</td>
+              <td><span class="spec-badge">Open Technology</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- DIVIDER -->
+      <hr style="margin: 64px 0 48px; border: 0; border-top: 1px solid var(--line);" />
+
+      <!-- SUPPORT & CONTACT SECTION -->
+      <section id="support" class="content-section" style="border-bottom: 0;">
+        <p class="section-label">DEVELOPER SUPPORT &amp; INQUIRIES</p>
+        <h2 class="preview-heading">Support &amp; Feedback</h2>
+        <p class="section-copy">
+          Have questions about <strong>AxisOS</strong> or <strong>Apex Overdrive</strong>? Need technical assistance, want to suggest an optimization tweak, or interested in contributing to open technology? Reach out directly to the lead developer.
+        </p>
+
+        <div class="data-grid" style="margin-top: 24px;">
+          <div class="data-cell">
+            <span>SUPPORT EMAIL</span>
+            <strong style="color: var(--blue);"><a href="mailto:jackympoka22@gmail.com" style="text-decoration: underline; text-underline-offset: 4px;">jackympoka22@gmail.com</a></strong>
+          </div>
+          <div class="data-cell">
+            <span>LEAD DEVELOPER</span>
+            <strong>Jacky Mpoka (@jackyphuti)</strong>
+          </div>
+          <div class="data-cell">
+            <span>SOURCE REPOSITORIES</span>
+            <strong><a href="https://github.com/jackyphuti" target="_blank" rel="noreferrer" style="text-decoration: underline;">github.com/jackyphuti ↗</a></strong>
+          </div>
+          <div class="data-cell">
+            <span>COMMUNITY ISSUES</span>
+            <strong>Public GitHub Issue Trackers</strong>
+          </div>
+        </div>
+
+        <div class="action-row" style="margin-top: 28px;">
+          <a class="action-link" href="mailto:jackympoka22@gmail.com" style="border-color: #205fc7; background: #205fc715;">✉️ Email Support: jackympoka22@gmail.com ↗</a>
+          <a class="action-link" href="https://github.com/jackyphuti/Game-Optimizer/issues" target="_blank" rel="noreferrer">Apex Overdrive Issues ↗</a>
+          <a class="action-link" href="https://github.com/jackyphuti/AxisOS/issues" target="_blank" rel="noreferrer">AxisOS Issues ↗</a>
+        </div>
+      </section>
     </main>
 
     <footer class="wrap site-footer">
       <div class="footer-inner">
-        <p>© <span id="year"></span> Axis Technologies · A 12links company</p>
+        <p>© <span id="year"></span> Axis Technologies · A 12links company · Support: <a href="mailto:jackympoka22@gmail.com" style="color: inherit; text-decoration: underline;">jackympoka22@gmail.com</a></p>
         <div class="footer-links">
           <a href="index.html">Home</a>
-          <a href="projects.html">AxisOS</a>
+          <a href="projects.html">Projects</a>
           <a href="install.html">Install Guide</a>
           <a href="people.html">People</a>
           <a href="about.html">About</a>
-          <a href="https://github.com/jackyphuti/AxisOS" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a href="mailto:jackympoka22@gmail.com">Support</a>
+          <a href="https://github.com/jackyphuti" target="_blank" rel="noreferrer">GitHub ↗</a>
         </div>
       </div>
     </footer>
